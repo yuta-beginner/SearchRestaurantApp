@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">SearchRestaurantApp</string>
+    <string name="title_restaurant">Restaurant</string>
+    <string name="title_map">Map</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_restaurant_toolbar">お店検索</string>
+    <string name="title_map_toolbar">お店マップ</string>
+    <string name="title_distance">現在地からの距離</string>
+    <string name="radioButton_distance_minimum">300 m</string>
+    <string name="radioButton_distance_middle">500 m</string>
+    <string name="radioButton_distance_max">1000 m</string>
+    <string name="title_genre">お店のジャンル</string>
+</resources>
