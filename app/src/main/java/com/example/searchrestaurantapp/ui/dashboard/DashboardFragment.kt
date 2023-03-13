@@ -86,18 +86,18 @@ class DashboardFragment : Fragment() {
         _binding = null
     }
 
-    fun showMarkerDialog(marker : Marker) {
-        marker!!.setOnMarkerClickListener { marker, mapView ->
+    private fun showMarkerDialog(marker : Marker) {
+        marker.setOnMarkerClickListener { marker, mapView ->
             val dialog = SimpleDialogFragment()
             dialog.show(childFragmentManager, "simple")
             true
         }
     }
 
-    inner class SimpleDialogFragment: DialogFragment(){
+    class SimpleDialogFragment: DialogFragment(){
         override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
 
-            val builder = AlertDialog.Builder(activity)
+            val builder = AlertDialog.Builder(requireContext())
 
             builder.setTitle("Here Title")
                 .setMessage("Here Message")

@@ -6,8 +6,27 @@
     <string name="title_restaurant_toolbar">お店検索</string>
     <string name="title_map_toolbar">お店マップ</string>
     <string name="title_distance">現在地からの距離</string>
-    <string name="radioButton_distance_minimum">300 m</string>
-    <string name="radioButton_distance_middle">500 m</string>
-    <string name="radioButton_distance_max">1000 m</string>
+    <string name="radio_button_distance_minimum">300 m</string>
+    <string name="radio_button_distance_middle">500 m</string>
+    <string name="radio_button_distance_max">1000 m</string>
     <string name="title_genre">お店のジャンル</string>
+    <string-array name="option_genre">
+        <item>居酒屋</item>
+        <item>ダイニングバー・バル</item>
+        <item>創作料理</item>
+        <item>和食</item>
+        <item>洋食</item>
+        <item>イタリアン・フレンチ</item>
+        <item>中華</item>
+        <item>焼肉・ホルモン</item>
+        <item>アジア・エスニック料理</item>
+        <item>各国料理</item>
+        <item>カラオケ・パーティ</item>
+        <item>バー・カクテル</item>
+        <item>ラーメン</item>
+        <item>カフェ・スイーツ</item>
+        <item>その他グルメ</item>
+        <item>お好み焼き・もんじゃ</item>
+        <item>韓国料理</item>
+    </string-array>
 </resources>
