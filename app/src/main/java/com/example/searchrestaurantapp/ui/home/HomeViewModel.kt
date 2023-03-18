@@ -1,24 +1,27 @@
 package com.example.searchrestaurantapp.ui.home
 
+import android.app.Activity
+import android.app.Application
+import android.content.Context
+import android.content.res.Resources
 import android.provider.MediaStore.Audio.Radio
+import android.provider.Settings.Global.getString
 import android.util.Log
 import android.widget.RadioButton
+import androidx.annotation.StringRes
+import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.databinding.InverseMethod
+import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.searchrestaurantapp.R
+import kotlin.math.absoluteValue
 
-class HomeViewModel : ViewModel() {
+class HomeViewModel: ViewModel() {
     init{
         Log.d("HomeViewModel", "HomeViewModel created.")
     }
-
-    /*private val _text = MutableLiveData<String>().apply {
-        value = "This is home Fragment"
-    }
-
-    val text: LiveData<String> = _text*/
 
     enum class RadioType(val restaurantDistance: Int) {
         MINIMUM_DISTANCE(300),
@@ -26,38 +29,10 @@ class HomeViewModel : ViewModel() {
         MAX_DISTANCE(1000),
     }
 
-    val _distance = MutableLiveData(RadioType.MINIMUM_DISTANCE.restaurantDistance)
+    var _distance = MutableLiveData(RadioType.MINIMUM_DISTANCE.restaurantDistance)
     val distance = _distance
 
-    @InverseMethod("buttonIdToDistance")
-    fun distanceToButtonId(distance: Int) : Int {
-        var selectedButtonId = -1
+    var _restaurantGenre = MutableLiveData<String>("居酒屋")
+    val restaurantGenre = _restaurantGenre
 
-        distance.run{
-            selectedButtonId = when(distance){
-                RadioType.MINIMUM_DISTANCE.restaurantDistance -> R.id.minimum_distance
-                RadioType.MIDDLE_DISTANCE.restaurantDistance -> R.id.middle_distance
-                RadioType.MAX_DISTANCE.restaurantDistance -> R.id.max_distance
-                else -> R.id.minimum_distance
-            }
-        }
-
-        return selectedButtonId
-    }
-
-    fun buttonIdToDistance(selectedButtonId: Int) : Int {
-        var type: Int = RadioType.MINIMUM_DISTANCE.restaurantDistance
-        when(selectedButtonId){
-            R.id.minimum_distance -> {
-                type = RadioType.MINIMUM_DISTANCE.restaurantDistance
-            }
-            R.id.middle_distance -> {
-                type = RadioType.MIDDLE_DISTANCE.restaurantDistance
-            }
-            R.id.max_distance -> {
-                type = RadioType.MAX_DISTANCE.restaurantDistance
-            }
-        }
-        return type
-    }
 }

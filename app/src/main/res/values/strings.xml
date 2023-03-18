@@ -10,8 +10,26 @@
     <string name="radio_button_distance_middle">500 m</string>
     <string name="radio_button_distance_max">1000 m</string>
     <string name="title_genre">お店のジャンル</string>
+    <string name="japanese_pub">居酒屋</string>
+    <string name="dining_bar_and_bal">ダイニングバー・バル</string>
+    <string name="creative_cuisine">創作料理</string>
+    <string name="japanese_cuisine">和食</string>
+    <string name="western_cuisine">洋食</string>
+    <string name="italian_and_french_cuisine">イタリアン・フレンチ</string>
+    <string name="chinese_cuisine">中華</string>
+    <string name="korean_barbecue_and_innards">焼肉・ホルモン</string>
+    <string name="asia_and_ethnic_cuisine">アジア・エスニック料理</string>
+    <string name="world_cuisine">各国料理</string>
+    <string name="karaoke_and_party">カラオケ・パーティ</string>
+    <string name="bar_and_cocktail">バー・カクテル</string>
+    <string name="ramen_noodles">ラーメン</string>
+    <string name="cafe_and_sweets">カフェ・スイーツ</string>
+    <string name="other_cuisine">その他グルメ</string>
+    <string name="okonomiyaki_and_monjayaki">お好み焼き・もんじゃ</string>
+    <string name="korean_cuisine">韓国料理</string>
+
     <string-array name="option_genre">
-        <item>居酒屋</item>
+        <item>@string/japanese_pub</item>
         <item>ダイニングバー・バル</item>
         <item>創作料理</item>
         <item>和食</item>

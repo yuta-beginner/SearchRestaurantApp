@@ -1,6 +1,7 @@
 package com.example.searchrestaurantapp.ui.home
 
 import android.app.Activity
+import android.app.Application
 import android.content.Context
 import android.os.Bundle
 import android.text.InputType
@@ -37,14 +38,19 @@ class HomeFragment : Fragment() {
         val homeViewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         //val homeViewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
+
+
         binding.homeViewModel = homeViewModel
         binding.lifecycleOwner = viewLifecycleOwner
         val root: View = binding.root
 
         val radioGroup : RadioGroup = binding.radioButtonGroupDistance
         homeViewModel.distance?.observe(viewLifecycleOwner){
-            radioGroup.check(homeViewModel.distanceToButtonId(it))
             Log.d("distance", "${homeViewModel.distance!!.value}")
+        }
+
+        homeViewModel.restaurantGenre.observe(viewLifecycleOwner){
+            Log.d("restaurantGenre", "${homeViewModel.restaurantGenre.value}")
         }
 
         /*radioGroup.setOnCheckedChangeListener { group, checkedId ->
@@ -57,14 +63,11 @@ class HomeFragment : Fragment() {
         val menuItems = resources.getStringArray(R.array.option_genre)
         val menuItemsList:MutableList<String> = menuItems.toMutableList()
 
-
         // お店のジャンルAdapterを作成。
         val genreAdapter : ArrayAdapter<String> = GenreDropDownAdapter(requireContext(), android.R.layout.simple_spinner_dropdown_item, menuItemsList)
         // アダプターをセット
         autoCompleteTextView.setAdapter(genreAdapter)
         // 初期に表示される飲食店のジャンルを表示
-        var defaultRestaurantGenre:String = menuItemsList[0]
-        autoCompleteTextView.setText(defaultRestaurantGenre)
 
         return root
     }

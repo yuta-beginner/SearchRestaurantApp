@@ -6,6 +6,7 @@
     tools:context=".ui.home.HomeFragment">
     
     <data>
+        <import type="com.example.searchrestaurantapp.ui.home.RestaurantsBindingUtil" />
         <variable
             name="homeViewModel"
             type="com.example.searchrestaurantapp.ui.home.HomeViewModel" />
@@ -81,8 +82,7 @@
                 android:orientation="horizontal"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView2"
-                android:checkedButton="@={homeViewModel.distanceToButtonId(homeViewModel._distance)}"
-                >
+                android:checkedButton="@={RestaurantsBindingUtil.distanceToButtonId(homeViewModel._distance)}">
 
                 <RadioButton
                     android:id="@+id/minimum_distance"
@@ -151,7 +151,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:enabled="false"
-                    android:textColor="@color/black" />
+                    android:textColor="@color/black"
+                    android:text="@={homeViewModel._restaurantGenre}" />
+
             </com.google.android.material.textfield.TextInputLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
 
