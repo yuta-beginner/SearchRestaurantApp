@@ -1,4 +1,4 @@
-@file:JvmName("RestaurantsBindingUtil")
+@file:JvmName("RestaurantsDistanceBindingUtil")
 
 package com.example.searchrestaurantapp.ui.home
 
@@ -7,10 +7,10 @@ import com.example.searchrestaurantapp.R
 
 
 @InverseMethod("buttonIdToDistance")
-fun distanceToButtonId(distance: Int): Int {
-    var selectedButtonId = -1
-    distance.run {
-        selectedButtonId = when (distance) {
+fun distanceToButtonId(restaurantsDistance :Int): Int {
+    var selectedButtonId: Int = -1
+    restaurantsDistance.run {
+        selectedButtonId = when (restaurantsDistance) {
             HomeViewModel.RadioType.MINIMUM_DISTANCE.restaurantDistance -> R.id.minimum_distance
             HomeViewModel.RadioType.MIDDLE_DISTANCE.restaurantDistance -> R.id.middle_distance
             HomeViewModel.RadioType.MAX_DISTANCE.restaurantDistance -> R.id.max_distance

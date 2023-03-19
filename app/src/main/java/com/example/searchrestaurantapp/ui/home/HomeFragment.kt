@@ -53,12 +53,6 @@ class HomeFragment : Fragment() {
             Log.d("restaurantGenre", "${homeViewModel.restaurantGenre.value}")
         }
 
-        /*radioGroup.setOnCheckedChangeListener { group, checkedId ->
-            homeViewModel.setRadioType(checkedId)
-            Log.d("radioTypeChanged", "${homeViewModel.radioType!!.value}")
-        }*/
-
-
         var autoCompleteTextView = binding.outlinedExposedDropdown
         val menuItems = resources.getStringArray(R.array.option_genre)
         val menuItemsList:MutableList<String> = menuItems.toMutableList()

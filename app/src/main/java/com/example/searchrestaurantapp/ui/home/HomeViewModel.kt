@@ -24,15 +24,35 @@ class HomeViewModel: ViewModel() {
     }
 
     enum class RadioType(val restaurantDistance: Int) {
-        MINIMUM_DISTANCE(300),
-        MIDDLE_DISTANCE(500),
-        MAX_DISTANCE(1000),
+        MINIMUM_DISTANCE(1),
+        MIDDLE_DISTANCE(2),
+        MAX_DISTANCE(3)
+    }
+
+    enum class RestaurantGenreItem(val restaurantGenre: String) {
+        JAPANESE_PUB("G001"),
+        DINING_BAR_AND_BAL("G002"),
+        CREATIVE_CUISINE("G003"),
+        JAPANESE_CUISINE("G004"),
+        WESTERN_CUISINE("G005"),
+        ITALIAN_AND_FRENCH_CUISINE("G006"),
+        CHINESE_CUISINE("G007"),
+        KOREAN_BARBECUE_AND_INNARDS("G008"),
+        ASIA_AND_ETHNIC_CUISINE("G009"),
+        WORLD_CUISINE("G010"),
+        KARAOKE_AND_PARTY("G011"),
+        BAR_AND_COCKTAIL("G012"),
+        RAMEN_NOODLES("G013"),
+        CAFE_AND_SWEETS("G014"),
+        OTHER_CUISINE("G015"),
+        OKONOMIYAKI_AND_MONJAYAKI("G016"),
+        KOREAN_CUISINE("G017")
     }
 
     var _distance = MutableLiveData(RadioType.MINIMUM_DISTANCE.restaurantDistance)
     val distance = _distance
 
-    var _restaurantGenre = MutableLiveData<String>("居酒屋")
+    var _restaurantGenre = MutableLiveData<String>(RestaurantGenreItem.JAPANESE_PUB.restaurantGenre)
     val restaurantGenre = _restaurantGenre
 
 }

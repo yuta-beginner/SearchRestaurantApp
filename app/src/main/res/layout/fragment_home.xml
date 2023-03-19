@@ -6,7 +6,8 @@
     tools:context=".ui.home.HomeFragment">
     
     <data>
-        <import type="com.example.searchrestaurantapp.ui.home.RestaurantsBindingUtil" />
+        <import type="com.example.searchrestaurantapp.ui.home.RestaurantsDistanceBindingUtil" />
+        <import type="com.example.searchrestaurantapp.ui.home.Converter" />
         <variable
             name="homeViewModel"
             type="com.example.searchrestaurantapp.ui.home.HomeViewModel" />
@@ -82,7 +83,7 @@
                 android:orientation="horizontal"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView2"
-                android:checkedButton="@={RestaurantsBindingUtil.distanceToButtonId(homeViewModel._distance)}">
+                android:checkedButton="@={RestaurantsDistanceBindingUtil.distanceToButtonId(homeViewModel._distance)}">
 
                 <RadioButton
                     android:id="@+id/minimum_distance"
@@ -136,7 +137,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/radioButtonGroup_distance" />
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/textView4"
+                android:id="@+id/restaurantGenreTextInputLayout"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -152,7 +153,7 @@
                     android:layout_height="wrap_content"
                     android:enabled="false"
                     android:textColor="@color/black"
-                    android:text="@={homeViewModel._restaurantGenre}" />
+                    android:text="@={Converter.categoryToString(restaurantGenreTextInputLayout, homeViewModel._restaurantGenre)}" />
 
             </com.google.android.material.textfield.TextInputLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
