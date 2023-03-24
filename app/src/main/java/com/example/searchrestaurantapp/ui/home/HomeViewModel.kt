@@ -19,40 +19,33 @@ import com.example.searchrestaurantapp.R
 import kotlin.math.absoluteValue
 
 class HomeViewModel: ViewModel() {
+
     init{
         Log.d("HomeViewModel", "HomeViewModel created.")
     }
 
-    enum class RadioType(val restaurantDistance: Int) {
-        MINIMUM_DISTANCE(1),
-        MIDDLE_DISTANCE(2),
-        MAX_DISTANCE(3)
-    }
+    // enumはdataパッケージにおくべき
+    // viewmodelはAPIの通信（何をどうしたいですか）
+    // modelの方でenumを管理
+    // resourcesにAPI用の配列を同じ長さで作る。
+    // API通信では対応するものをresourcesからとってくる。
+    // indexはmodelのロジックでとってくる。
+    // enumは内部のもっと細かい部分に関わる定数（一部的なデータ調整のパラメータ）
+    // xmlに定義しておくことで、API修正の時にxmlだけ修正するだけでOKとなる=>補修性高い
+    // RESTAPIはクライアントからのリクエスト
+    // Rxはサーバーからの通信に受ける。
+    // viewmodelはコミュニケーション部分に特化させる。
+    // kotlinの言語思想（１ファイルに複数クラス）とアーキテクチャ（オブジェクト指向）は分けて考えるべき。
+    // javaのinnerクラスは危ないという考え方もある。少なくとも気をつけなければならない。
+    // enum使っちゃえば楽だが、末端の定数（よっぽど変わらない定数）はxmlに定義すべき=>保守性の観点
 
-    enum class RestaurantGenreItem(val restaurantGenre: String) {
-        JAPANESE_PUB("G001"),
-        DINING_BAR_AND_BAL("G002"),
-        CREATIVE_CUISINE("G003"),
-        JAPANESE_CUISINE("G004"),
-        WESTERN_CUISINE("G005"),
-        ITALIAN_AND_FRENCH_CUISINE("G006"),
-        CHINESE_CUISINE("G007"),
-        KOREAN_BARBECUE_AND_INNARDS("G008"),
-        ASIA_AND_ETHNIC_CUISINE("G009"),
-        WORLD_CUISINE("G010"),
-        KARAOKE_AND_PARTY("G011"),
-        BAR_AND_COCKTAIL("G012"),
-        RAMEN_NOODLES("G013"),
-        CAFE_AND_SWEETS("G014"),
-        OTHER_CUISINE("G015"),
-        OKONOMIYAKI_AND_MONJAYAKI("G016"),
-        KOREAN_CUISINE("G017")
-    }
+    private val initialRestaurantDistanceCode: Int = 1
+    private val initialRestaurantGenreCode: String= "G001"
 
-    var _distance = MutableLiveData(RadioType.MINIMUM_DISTANCE.restaurantDistance)
+    var _distance = MutableLiveData(initialRestaurantDistanceCode)
     val distance = _distance
 
-    var _restaurantGenre = MutableLiveData<String>(RestaurantGenreItem.JAPANESE_PUB.restaurantGenre)
+    // modelで変換したものをMutableLiveData<String(model.convertにする。)
+    var _restaurantGenre = MutableLiveData<String>(initialRestaurantGenreCode)
     val restaurantGenre = _restaurantGenre
-
 }

@@ -10,6 +10,7 @@
     <string name="radio_button_distance_middle">500 m</string>
     <string name="radio_button_distance_max">1000 m</string>
     <string name="title_genre">お店のジャンル</string>
+
     <string name="japanese_pub">居酒屋</string>
     <string name="dining_bar_and_bal">ダイニングバー・バル</string>
     <string name="creative_cuisine">創作料理</string>
@@ -28,23 +29,71 @@
     <string name="okonomiyaki_and_monjayaki">お好み焼き・もんじゃ</string>
     <string name="korean_cuisine">韓国料理</string>
 
+    <string name="code_japanese_pub">G001</string>
+    <string name="code_dining_bar_and_bal">G002</string>
+    <string name="code_creative_cuisine">G003</string>
+    <string name="code_japanese_cuisine">G004</string>
+    <string name="code_western_cuisine">G005</string>
+    <string name="code_italian_and_french_cuisine">G006</string>
+    <string name="code_chinese_cuisine">G007</string>
+    <string name="code_korean_barbecue_and_innards">G008</string>
+    <string name="code_asia_and_ethnic_cuisine">G009</string>
+    <string name="code_world_cuisine">G010</string>
+    <string name="code_karaoke_and_party">G011</string>
+    <string name="code_bar_and_cocktail">G012</string>
+    <string name="code_ramen_noodles">G013</string>
+    <string name="code_cafe_and_sweets">G014</string>
+    <string name="code_other_cuisine">G015</string>
+    <string name="code_okonomiyaki_and_monjayaki">G016</string>
+    <string name="code_korean_cuisine">G017</string>
+
+    <string name="code_distance_minimum">1</string>
+    <string name="code_distance_middle">2</string>
+    <string name="code_distance_max">3</string>
+
     <string-array name="option_genre">
         <item>@string/japanese_pub</item>
-        <item>ダイニングバー・バル</item>
-        <item>創作料理</item>
-        <item>和食</item>
-        <item>洋食</item>
-        <item>イタリアン・フレンチ</item>
-        <item>中華</item>
-        <item>焼肉・ホルモン</item>
-        <item>アジア・エスニック料理</item>
-        <item>各国料理</item>
-        <item>カラオケ・パーティ</item>
-        <item>バー・カクテル</item>
-        <item>ラーメン</item>
-        <item>カフェ・スイーツ</item>
-        <item>その他グルメ</item>
-        <item>お好み焼き・もんじゃ</item>
-        <item>韓国料理</item>
+        <item>@string/dining_bar_and_bal</item>
+        <item>@string/creative_cuisine</item>
+        <item>@string/japanese_cuisine</item>
+        <item>@string/western_cuisine</item>
+        <item>@string/italian_and_french_cuisine</item>
+        <item>@string/chinese_cuisine</item>
+        <item>@string/korean_barbecue_and_innards</item>
+        <item>@string/asia_and_ethnic_cuisine</item>
+        <item>@string/world_cuisine</item>
+        <item>@string/karaoke_and_party</item>
+        <item>@string/bar_and_cocktail</item>
+        <item>@string/ramen_noodles</item>
+        <item>@string/cafe_and_sweets</item>
+        <item>@string/other_cuisine</item>
+        <item>@string/okonomiyaki_and_monjayaki</item>
+        <item>@string/korean_cuisine</item>
+    </string-array>
+
+    <string-array name="restaurant_genre_codes">
+        <item>@string/code_japanese_pub</item>
+        <item>@string/code_dining_bar_and_bal</item>
+        <item>@string/code_creative_cuisine</item>
+        <item>@string/code_japanese_cuisine</item>
+        <item>@string/code_western_cuisine</item>
+        <item>@string/code_italian_and_french_cuisine</item>
+        <item>@string/code_chinese_cuisine</item>
+        <item>@string/code_korean_barbecue_and_innards</item>
+        <item>@string/code_asia_and_ethnic_cuisine</item>
+        <item>@string/code_world_cuisine</item>
+        <item>@string/code_karaoke_and_party</item>
+        <item>@string/code_bar_and_cocktail</item>
+        <item>@string/code_ramen_noodles</item>
+        <item>@string/code_cafe_and_sweets</item>
+        <item>@string/code_other_cuisine</item>
+        <item>@string/code_okonomiyaki_and_monjayaki</item>
+        <item>@string/code_korean_cuisine</item>
+    </string-array>
+
+    <string-array name="restaurant_distance_codes">
+        <item>@string/code_distance_minimum</item>
+        <item>@string/code_distance_middle</item>
+        <item>@string/code_distance_max</item>
     </string-array>
 </resources>
